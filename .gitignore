@@ -1,7 +1,6 @@
 logs/
 setup/
 !.mvn/wrapper/maven-wrapper.jar
-jcubeboot-bgworker/target
 
 ### STS ###
 .apt_generated
@@ -17,7 +16,7 @@ jcubeboot-bgworker/target
 *.iws
 *.iml
 *.ipr
-jcbeBoot.log.*
+
 
 ### NetBeans ###
 nbproject/private/
@@ -26,7 +25,6 @@ dist/
 nbdist/
 .nb-gradle/
 
-jcubeboot-frontui/front/node_modules
 node_modules/
 target/
 .idea/*.xml

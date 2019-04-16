@@ -1,7 +1,10 @@
 package com.szs.springcloud;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * Copyright (C), 2018-2019, ZhengZhouChuangZhi. Co., Ltd.
@@ -12,7 +15,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0
  * @Date 2019/4/16 17:23
  */
+@Component
 @SpringBootApplication
+@MapperScan(value = "com.szs.springcloud.dao")
+//@ConfigurationProperties(prefix = "application")
 public class DeptProvider8001_App {
     public static void main(String[] args) {
         SpringApplication.run(DeptProvider8001_App.class, args);

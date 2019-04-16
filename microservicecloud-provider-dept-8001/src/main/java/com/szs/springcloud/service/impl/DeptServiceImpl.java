@@ -3,6 +3,7 @@ import com.szs.springcloud.dao.DeptDao;
 import com.szs.springcloud.entities.Dept;
 import com.szs.springcloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @version 1.0
  * @Date 2019/4/16 16:59
  */
+@Service
 public class DeptServiceImpl implements DeptService {
 
     @Autowired
@@ -32,6 +34,7 @@ public class DeptServiceImpl implements DeptService {
 
     @Override
     public List<Dept> findAll() {
+
         return dao.findAll();
     }
 }

@@ -3,9 +3,7 @@ package com.szs.springcloud.controller;
 import com.szs.springcloud.entities.Dept;
 import com.szs.springcloud.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,19 +22,24 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
-    @PostMapping("/dept/add")
-    public boolean addDept(Dept dept) {
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
+    public boolean addDept(@RequestParam("deptName")String deptName) {
+        //?deptName=喝茶酱油部
+        Dept dept = new Dept();
+        dept.setDeptName(deptName);
         return deptService.addDept(dept);
     }
 
-    @GetMapping("/dept/findById")
-    public Dept findById(Long id) {
+    @GetMapping("/findById")
+    public Dept findById(@RequestParam("id") Long id) {
+        //返回结果举例子: {"deptNo":1,"deptName":"开发部","dbSource":"clouddb01"}
         return deptService.findById(id);
     }
 
-    @GetMapping("/dept/findAll")
+    @GetMapping("/findAll")
     public List<Dept> findAll() {
-        return deptService.findAll();
+        List<Dept>  list= deptService.findAll();
+        return list;
     }
 
 }

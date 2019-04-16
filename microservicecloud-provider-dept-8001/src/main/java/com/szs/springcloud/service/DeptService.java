@@ -14,7 +14,7 @@ import java.util.List;
  * @version 1.0
  * @Date 2019/4/16 16:57
  */
-@Service
+
 public interface DeptService {
     public boolean addDept( Dept dept);
 
