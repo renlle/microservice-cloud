@@ -3,7 +3,6 @@ package com.szs.springcloud;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,9 +17,8 @@ import org.springframework.stereotype.Component;
 @Component
 @SpringBootApplication
 @MapperScan(value = "com.szs.springcloud.dao")
-//@ConfigurationProperties(prefix = "application")
-public class DeptProvider8001_App {
+public class DeptProvider8001Application {
     public static void main(String[] args) {
-        SpringApplication.run(DeptProvider8001_App.class, args);
+        SpringApplication.run(DeptProvider8001Application.class, args);
     }
 }

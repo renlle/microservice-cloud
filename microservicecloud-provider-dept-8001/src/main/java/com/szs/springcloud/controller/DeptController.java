@@ -22,14 +22,6 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public boolean addDept(@RequestParam("deptName")String deptName) {
-        //?deptName=喝茶酱油部
-        Dept dept = new Dept();
-        dept.setDeptName(deptName);
-        return deptService.addDept(dept);
-    }
-
     @GetMapping("/findById")
     public Dept findById(@RequestParam("id") Long id) {
         //返回结果举例子: {"deptNo":1,"deptName":"开发部","dbSource":"clouddb01"}
@@ -40,6 +32,14 @@ public class DeptController {
     public List<Dept> findAll() {
         List<Dept>  list= deptService.findAll();
         return list;
+    }
+
+    @GetMapping(value = "/add")
+    public boolean addDept(@RequestParam("deptName")String deptName) {
+        //add?deptName=喝茶酱油部
+        Dept dept = new Dept();
+        dept.setDeptName(deptName);
+        return deptService.addDept(dept);
     }
 
 }
