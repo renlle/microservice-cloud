@@ -1,14 +1,20 @@
 <template>
   <div class="courseDetailWrapper">
-    <!--上面条目-->
+    <!--头部条目-->
     <div class="courseDetailHeader">
+      <!--头部条目,图片-->
       <div class="courseDetailPhoto">
         <img src="./assets/htmlCourse.png">
       </div>
+      <!--头部条目,右侧-->
       <div class="headerLeft">
         <div class="courseTitle">
           HTML 基础课程
         </div>
+        <div class="courseStar">
+          <i class="el-icon-star-off"></i>
+        </div>
+        <br>
         <div class="courseInfo">
           <span>524</span>人学过&nbsp;&nbsp;&nbsp;&nbsp;
           <span>44</span>人收藏
@@ -20,23 +26,68 @@
           HTML 很容易学习！相信您能很快学会它！
         </div>
         <div class="btnBig">
-          <el-button round>开始学习</el-button>
+          <el-button type="success">开始学习</el-button>
+        </div>
+      </div>
+    </div>
+
+    <!--主框-->
+    <div class="courseDetailSection">
+
+      <div class="courseTopicTitle">课程章节</div>
+
+      <div class="courseItem">
+        <div class="courseItemTitle">
+          第一章 网站基础相关概念
+          <div class="courseItemBtn">
+            <el-button type="success">开始学习</el-button>
+          </div>
+        </div>
+        <div class="courseItemBrief">
+          知识点: 1.HTTP基础 2.网站是什么 3.浏览器访问 4.网站的文件处理
         </div>
 
       </div>
+      <div class="courseItem">
+        <div class="courseItemTitle">
+          第二章 HTML简介(上)
+          <div class="courseItemPrompt">
+            请按照顺序进行学习
+          </div>
+        </div>
+        <div class="courseItemBrief">
+          知识点: 1.HTTP基础 2.网站是什么 3.浏览器访问 4.网站的文件处理
+        </div>
+      </div>
+      <div class="courseItem">
+        <div class="courseItemTitle">第三章 HTML简介(下)</div>
+        <div class="courseItemBrief">
+          知识点: 1.HTTP基础 2.网站是什么 3.浏览器访问 4.网站的文件处理
+        </div>
+      </div>
+    </div>
 
-    </div>
-    <!--主框-->
-    <div class="courseDetailSection">
-      <h2>主框 courseDetailSection</h2>
-    </div>
     <!--右侧边框: 课程教师-->
     <div class="courseDetailAsideOfTeacher">
-      <h3>课程教师</h3>
+      <div  class="asideTitle">课程教师</div>
+      <hr style="size: 1px;width: 430px;align-self: center"/>
+      <div class="asidePicture">
+        <img src="./assets/head-picture.jpg" alt="">
+      </div>
+      <div class="teacherName">酱油君</div>
+      <div class="teacherBrief">共发布3门课程</div>
+      <div class="teacherCourseAll"><br><br><br><br><a href="#">查看教师发布的所有课程>></a></div>
     </div>
     <!--右侧边框: 相似课程-->
     <div class="courseDetailAsideOfSimilar">
-      <h3>相似课程 courseDetailAsideOfSimilar</h3>
+      <div  class="asideTitle">相似课程</div>
+      <hr style="size: 1px;width: 430px;align-self: center"/>
+      <ul>
+        <li>CSS 基础课程</li>
+        <li>JavaScript 基础课程</li>
+        <li>基础Canvas实现放大镜效果</li>
+        <li>纯前端打造实时markdown编辑器</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -48,6 +99,101 @@ export default {
 </script>
 
 <style>
+  ul li{
+    margin-top: 28px;
+    font-family: "PingFang-SC-Regular";
+    font-size: 16px;
+    color: #666666;
+  }
+  a{
+    text-decoration:none;
+    color:blue;
+  }
+  .teacherCourseAll{
+    text-align: right;
+  }
+  .teacherBrief{
+    magin:0 6px;
+    margin-top: 10px;
+    font-family: "PingFang-SC-Regular";
+    font-size: 16px;
+    color: #666666;
+  }
+  .teacherName{
+    magin-left: 6px;
+    font-family: "PingFang-SC-Regular";
+    font-size: 18px;
+    color: #333333;
+  }
+  .asidePicture img{
+    width: 100px;
+    height: 100px;
+    padding-bottom: 30px;
+    margin-left: 20px;
+  }
+  .asidePicture{
+    float: left;
+  }
+  .asideTitle{
+    margin: 14px 0px 14px 16px;
+    font-family: "PingFang-SC-Regular";
+    font-size: 22px;
+    color: #333333;
+  }
+  .courseItemPrompt{
+    font-family: "PingFang-SC-Medium";
+    font-size: 14px;
+    color: #1fad4e;
+    text-align: right;
+  }
+  .courseItemBtn button{
+    /*position: absolute;*/
+    font-family: "PingFang-SC-Medium";
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1fad4e;
+    vertical-align: bottom;
+    margin-right: -10px;
+  }
+  .courseItemBtn{
+    float: right;
+    vertical-align: bottom;
+    margin-right: 20px;
+    margin-top: 30px;
+    display: inline-block;
+  }
+  .courseItemBrief{
+    font-family: "PingFang-SC-Medium";
+    font-size: 16px;
+    color: #999999;
+    width: auto;
+    /*float: left;*/
+  }
+  .courseItemTitle{
+    font-family: "PingFang-SC-Medium";
+    font-size: 22px;
+    color: #1c1f21;
+    /*padding-bottom: 40px;*/
+    height: 66px;
+    /*float: left;*/
+  }
+  .courseItem{
+    height: 110px;
+    width: 1340px;
+    background-color: #EEEEEE;
+    padding: 14px;
+    margin-top: 20px;
+    position: relative;
+  }
+  .courseTopicTitle{
+    font-family: "PingFang-SC-Medium";
+    font-size: 24px;
+    color: #333333;
+  }
+  .courseStar{
+    float: right;
+    font-size: 40px;
+  }
   .btnBig button{
     /*color: #1fad4e;*/
     border-radius: 6px;
@@ -83,11 +229,13 @@ export default {
     font-family: "PingFang-SC-Medium";
     font-size: 26px;
     color: #1c1f21;
+    float: left;
   }
   .courseDetailAsideOfSimilar{
     margin-left: 20px;
     margin-top: 20px;
-    width: 481px;
+    width: 460px;
+    height: 270px;
     background-color:white;
     float: left;
   }
@@ -95,7 +243,8 @@ export default {
     float: left;
     margin-top: 20px;
     margin-left: 20px;
-    width: 481px;
+    width: 460px;
+    height: 268px;
     background-color:white;
   }
   .courseDetailPhoto{
@@ -105,9 +254,10 @@ export default {
   .courseDetailSection{
     margin-top: 20px;
     float: left;
-    width: 1381px;
+    width: 1371px;
     background-color:white;
     height: 840px;
+    padding: 18px 14px 0 14px;
   }
   .courseDetailHeader{
     padding-top: 26px;
@@ -128,6 +278,7 @@ html,body {
   padding: 0;
   /*灰白色*/
   background-color: #EEEEEE;
+  align:center;
 }
 .authorInfo p {
   margin: 0;
