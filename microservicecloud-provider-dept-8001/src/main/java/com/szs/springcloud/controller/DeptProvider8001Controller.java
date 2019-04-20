@@ -17,24 +17,24 @@ import java.util.List;
  * @Date 2019/4/16 17:17
  */
 @RestController
-public class DeptController {
+public class DeptProvider8001Controller {
 
     @Autowired
     private DeptService deptService;
 
-    @GetMapping("/findById")
+    @RequestMapping("/findById")
     public Dept findById(@RequestParam("id") Long id) {
         //返回结果举例子: {"deptNo":1,"deptName":"开发部","dbSource":"clouddb01"}
         return deptService.findById(id);
     }
 
-    @GetMapping("/findAll")
+    @RequestMapping("/findAll")
     public List<Dept> findAll() {
         List<Dept>  list= deptService.findAll();
         return list;
     }
 
-    @GetMapping(value = "/add")
+    @RequestMapping(value = "/add")
     public boolean addDept(@RequestParam("deptName")String deptName) {
         //add?deptName=喝茶酱油部
         Dept dept = new Dept();
