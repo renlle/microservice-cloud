@@ -1,11 +1,9 @@
-
 node_modules/
 target/
-
+.idea/*.xml
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
 .idea/
-.idea/*.xml

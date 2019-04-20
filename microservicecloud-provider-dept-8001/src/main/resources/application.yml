@@ -8,9 +8,9 @@ mybatis:
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
-spring:
+spring:                                                    #对应Eureka的微服务名字
    application:
-    name: microservicecloud-dept
+    name: microservicecloud-provider-dept-8001
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -23,18 +23,18 @@ spring:
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
 
-#eureka:
-#  client: #客户端注册进eureka服务列表内
-#    service-url:
-#      #defaultZone: http://localhost:7001/eureka
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://localhost:7001/eureka
 #       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-#  instance:
-#    instance-id: microservicecloud-dept8001
-#    prefer-ip-address: true     #访问路径可以显示IP地址
-#
-#info:
-#  app.name: atguigu-microservicecloud
-#  company.name: www.szs.com
-#  build.artifactId: $project.artifactId$
-#  build.version: $project.version$
+  instance:
+    instance-id: microservicecloud-provider-dept-8001XXXXX  # 主机映射名称修改(自定义服务名称信息)
+    prefer-ip-address: true     #访问路径可以显示IP地址,可公共访问的IP地址
+
+info:
+  app.name: szs-microservicecloud
+  company.name: www.szs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
 

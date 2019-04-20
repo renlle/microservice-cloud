@@ -3,8 +3,6 @@ package com.szs.springcloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.security.ProtectionDomain;
-
 /**
  * Copyright (C), 2018-2019, ZhengZhouChuangZhi. Co., Ltd.
  * FileName: ${FILENAME}
@@ -15,8 +13,8 @@ import java.security.ProtectionDomain;
  * @Date 2019/4/19 20:35
  */
 @SpringBootApplication
-public class DeptProvider80Application {
+public class DeptConsumer80Application {
     public static void main(String[] args) {
-        SpringApplication.run(DeptProvider80Application.class, args);
+        SpringApplication.run(DeptConsumer80Application.class, args);
     }
 }
