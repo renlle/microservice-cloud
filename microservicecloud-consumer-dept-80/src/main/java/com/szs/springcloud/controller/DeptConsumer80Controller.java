@@ -2,13 +2,9 @@ package com.szs.springcloud.controller;
 
 import com.szs.springcloud.entities.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 
@@ -34,7 +30,7 @@ public class DeptConsumer80Controller {
      */
     public static String REST_URL_PREFIX = "http://localhost:8001/provider";
 
-    @Autowired(required=false)
+    @Autowired
     private RestTemplate restTemplate;
 
     @RequestMapping(value = "/")
@@ -53,11 +49,30 @@ public class DeptConsumer80Controller {
     public Dept findById(@PathVariable(name = "id")Long id){
         return restTemplate.getForObject(REST_URL_PREFIX+"/findById/{id}", Dept.class,id);
     }
-
-    @SuppressWarnings("unchecked")
+    /**
+     * @description
+     * @suppresswarnings 就是告诉编译器忽略警告。不用在编译完成后出现警告
+     * @author 宋泽山
+     * @date 2019/4/21 15:56
+     * @param
+     * @return
+     */
+//    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/findAll")
-    public List<Dept> findAll(){
+    public List findAll(){
+        System.out.println(restTemplate+"---------"+restTemplate.getErrorHandler());
         return restTemplate.getForObject(REST_URL_PREFIX+"/findAll",List.class);
     }
-
+    /**
+     * @description 消费者端的服务发现
+     * @author 宋泽山
+     * @date 2019/4/21 15:30
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/discovery",method = RequestMethod.GET)
+    public Object discovery() {
+        System.out.println("消费者端的服务发现\n");
+        return restTemplate.getForObject(REST_URL_PREFIX+"/discovery",Object.class);
+    }
 }

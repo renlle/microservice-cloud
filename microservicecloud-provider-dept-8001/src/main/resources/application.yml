@@ -4,7 +4,7 @@ server:
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+  type-aliases-package: com.szs.springcloud.entities    # 所有Entity别名类所在包
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
@@ -26,10 +26,10 @@ spring:                                                    #对应Eureka的微�
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
-      defaultZone: http://localhost:7001/eureka
-#       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+#      defaultZone: http://localhost:7001/eureka    #单机版,下面为集群版
+       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: microservicecloud-provider-dept-8001XXXXX  # 主机映射名称修改(自定义服务名称信息)
+    instance-id: microservicecloud-provider-dept-8001  # 主机映射名称修改(自定义服务名称信息)
     prefer-ip-address: true     #访问路径可以显示IP地址,可公共访问的IP地址
 
 info:

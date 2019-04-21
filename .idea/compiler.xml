@@ -9,7 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="microservicecloud-api" />
         <module name="microservicecloud-consumer-dept-80" />
-        <module name="microservicecloud-eureka-server-7001" />
+        <module name="microservicecloud-eureka-7001" />
+        <module name="microservicecloud-eureka-7002" />
+        <module name="microservicecloud-eureka-7003" />
         <module name="microservicecloud-provider-dept-8001" />
       </profile>
     </annotationProcessing>
