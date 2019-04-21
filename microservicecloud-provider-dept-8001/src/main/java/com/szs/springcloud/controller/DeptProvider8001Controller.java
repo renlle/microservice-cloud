@@ -22,7 +22,7 @@ public class DeptProvider8001Controller {
     @Autowired
     private DeptService deptService;
 
-    @RequestMapping(value = "/add/{deptName}" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/add/{deptName}" ,method = RequestMethod.GET, produces = "application/json")
     public boolean addDept(@PathVariable(name = "deptName") String deptName) {
 //        add?deptName=喝茶酱油部
         Dept dept = new Dept();
@@ -30,13 +30,14 @@ public class DeptProvider8001Controller {
 
         return deptService.addDept(dept);
     }
-    @RequestMapping(value = "/findById/{id}",method = RequestMethod.GET)
+
+    @RequestMapping(value = "/findById/{id}",method = RequestMethod.GET, produces = "application/json")
     public Dept findById(@PathVariable(name = "id") Long id) {
         //返回结果举例子: {"deptNo":1,"deptName":"开发部","dbSource":"clouddb01"}
         return deptService.findById(id);
     }
 
-    @RequestMapping(value = "/findAll",method = RequestMethod.GET)
+    @RequestMapping(value = "/findAll",method = RequestMethod.GET, produces = "application/json")
     public List<Dept> findAll() {
         List<Dept>  list= deptService.findAll();
         return list;

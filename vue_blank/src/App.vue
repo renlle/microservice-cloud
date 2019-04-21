@@ -33,8 +33,24 @@
 
     <!--主框-->
     <div class="courseDetailSection">
-
       <div class="courseTopicTitle">课程章节</div>
+
+      <div class="courseItem">
+        <div class="courseItemTitle">
+          第0章-测试跳转 <br>
+          <a v-on:click="send('add')">测试8001dept 添加操作</a>
+          <input type="text" v-model="addData"> <br>
+
+          <a v-on:click="send('findAll')">测试findAll</a><br>
+
+          <a v-on:click="send('findById')" v-model="findId">测试findById</a>
+          <input type="text" v-model="findId"><br><br>
+
+        </div>
+      </div>
+      <div class="courseItem">
+        <p v-model="testAnswer">测试结果::::  {{testAnswer}}</p>
+      </div>
 
       <div class="courseItem">
         <div class="courseItemTitle">
@@ -46,7 +62,6 @@
         <div class="courseItemBrief">
           知识点: 1.HTTP基础 2.网站是什么 3.浏览器访问 4.网站的文件处理
         </div>
-
       </div>
       <div class="courseItem">
         <div class="courseItemTitle">
@@ -93,8 +108,51 @@
 </template>
 
 <script>
-export default {
-  name: 'App'
+  import axios from 'axios'
+  export default {
+  name: 'App',
+  data() {
+    return {
+      addData: 'test',
+      findId: 1,
+      testAnswer: []
+    }
+  },
+  methods:{
+    //发送ajax请求
+    send: function (name) {
+      let Url = '';
+      if (name === 'add') {
+        this.addData  =Math.floor((Math.random()*1000)+1);
+
+        console.log('+'+this.addData+"----------this.addData----------");
+
+        Url = 'http://localhost:8001/provider/add/' + this.addData
+      } else if (name === 'findAll') {
+        Url = 'http://localhost:8001/provider/findAll'
+      } else {
+        Url = 'http://localhost:8001/provider/findById/' + this.findId
+      }
+      const listItem = [];
+      axios({
+        method: 'get',
+        url : Url
+      }).then( (res)=>{
+        console.log(res.data+"----------res.data----------");
+        if(res.data )
+          listItem .push( res.data);
+        else
+          listItem .push( 'null-----------');
+        console.log(listItem+"----------listItem----------")
+      });
+
+      // //解析数据
+      // for(let i=0;i<this.message.data.length;i++){
+      //   console.log(this.message.data[i].firstChild)
+      // }
+      this.testAnswer = listItem
+    }
+  }
 }
 </script>
 
@@ -178,8 +236,9 @@ export default {
     /*float: left;*/
   }
   .courseItem{
-    height: 110px;
-    width: 1340px;
+    height: 110px ;
+    min-width: 1340px;
+    width: auto;
     background-color: #EEEEEE;
     padding: 14px;
     margin-top: 20px;
