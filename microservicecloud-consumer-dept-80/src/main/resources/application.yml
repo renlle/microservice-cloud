@@ -1,3 +1,9 @@
 server:
   port: 80
   context-path: /consumer
+
+eureka:
+  client:
+    register-with-eureka: false #自己不能注册
+    service-url:                #集群版配置
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/

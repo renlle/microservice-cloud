@@ -8,10 +8,13 @@
     <modules>
         <module>microservicecloud-api</module>
         <module>microservicecloud-provider-dept-8001</module>
+        <module>microservicecloud-provider-dept-8002</module>
+        <module>microservicecloud-provider-dept-8003</module>
         <module>microservicecloud-consumer-dept-80</module>
         <module>microservicecloud-eureka-7001</module>
         <module>microservicecloud-eureka-7002</module>
         <module>microservicecloud-eureka-7003</module>
+
     </modules>
     <packaging>pom</packaging>
     <name>microservicecloud_szs</name>
@@ -73,6 +76,15 @@
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
+            <!-- 修改后立即生效，热部署 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>springloaded</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <!--总的父工程microservicecloud修改pom.xml添加构建build信息-->
@@ -95,7 +107,7 @@
                     <delimiters>
                         <delimiter>$</delimiter>
                     </delimiters>
-                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                    <!--<useDefaultDelimiters>false</useDefaultDelimiters>-->
                 </configuration>
             </plugin>
         </plugins>

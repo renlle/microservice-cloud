@@ -2,6 +2,7 @@ package com.szs.springcloud.controller;
 
 import com.szs.springcloud.entities.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -28,10 +29,17 @@ public class DeptConsumer80Controller {
      * REST请求地址  /请求参数   /Http响应转换被转换成的对象类型!
      *
      */
-    public static String REST_URL_PREFIX = "http://localhost:8001/provider";
 
     @Autowired
     private RestTemplate restTemplate;
+    /**
+     * 老的写法:     //  public static String REST_URL_PREFIX = "http://localhost:8001/provider";
+     *  要点:
+     *      Ribbon 和Eureka 整合后Consumer 可以直接调用服务 而不用再关心地址和端口号!!
+     */
+    public static String REST_URL_PREFIX = "http://MICROSERVICECLOUD-PROVIDER-DEPT-8001/provider";
+
+
 
     @RequestMapping(value = "/")
     public String welcome(){
