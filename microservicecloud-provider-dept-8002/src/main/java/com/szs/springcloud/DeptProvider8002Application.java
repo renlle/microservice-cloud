@@ -23,6 +23,6 @@ import org.springframework.stereotype.Component;
 @EnableDiscoveryClient
 public class DeptProvider8002Application {
     public static void main(String[] args) {
-        SpringApplication.run(DeptProvider8001Application.class, args);
+        SpringApplication.run(DeptProvider8002Application.class, args);
     }
 }
