@@ -24,7 +24,8 @@ public class RestTemplateConfig {
     /**
      * 完整真正的通过微服务名字从eureka 上找到并访问
      *
-     * spring Cloud Ribbon 是基于netflix Ribbon实现的一套客户端, 负载均衡的工具;使用@LoadBalanced即可!
+     * spring Cloud Ribbon 是基于netflix Ribbon实现的一套客户端, 负载均衡的工具;
+     *                  使用@LoadBalanced即可!默认是轮询方式!!1-2-3-1-2-3
      * @description 创建产生RestTemplate 的类
      * @author 宋泽山
      * @date 2019/4/23 19:55

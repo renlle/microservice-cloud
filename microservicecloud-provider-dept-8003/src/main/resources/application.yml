@@ -10,11 +10,11 @@ mybatis:
 
 spring:                                                    #对应Eureka的微服务名字
    application:
-    name: microservicecloud-provider-dept-8003
+    name: microservicecloud-provider-dept
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
+    url: jdbc:mysql://localhost:3306/cloudDB03              # 数据库名称
     username: szs
     password: 1234
     dbcp2:

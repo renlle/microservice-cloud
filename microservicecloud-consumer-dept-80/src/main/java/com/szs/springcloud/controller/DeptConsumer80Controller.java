@@ -37,7 +37,7 @@ public class DeptConsumer80Controller {
      *  要点:
      *      Ribbon 和Eureka 整合后Consumer 可以直接调用服务 而不用再关心地址和端口号!!
      */
-    public static String REST_URL_PREFIX = "http://MICROSERVICECLOUD-PROVIDER-DEPT-8001/provider";
+    public static String REST_URL_PREFIX = "http://MICROSERVICECLOUD-PROVIDER-DEPT/provider";
 
 
 
@@ -59,7 +59,7 @@ public class DeptConsumer80Controller {
     }
     /**
      * @description
-     * @suppresswarnings 就是告诉编译器忽略警告。不用在编译完成后出现警告
+     * @suppresswarnings("unchecked") 就是告诉编译器忽略警告。不用在编译完成后出现警告
      * @author 宋泽山
      * @date 2019/4/21 15:56
      * @param
@@ -68,7 +68,6 @@ public class DeptConsumer80Controller {
 //    @SuppressWarnings("unchecked")
     @RequestMapping(value = "/findAll")
     public List findAll(){
-        System.out.println(restTemplate+"---------"+restTemplate.getErrorHandler());
         return restTemplate.getForObject(REST_URL_PREFIX+"/findAll",List.class);
     }
     /**
