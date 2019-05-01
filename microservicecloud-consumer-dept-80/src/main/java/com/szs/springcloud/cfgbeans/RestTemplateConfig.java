@@ -1,5 +1,9 @@
 package com.szs.springcloud.cfgbeans;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
+import com.netflix.loadbalancer.RetryRule;
+import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -37,4 +41,20 @@ public class RestTemplateConfig {
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
+    /**
+     * 用我们重新选择的随机算法替代默认的轮询算法 : RandomRule
+     */
+//    @Bean
+//    public IRule myRule(){
+//        /**默认的轮询算法*/
+//        //return new RoundRobinRule();
+//        /**随机唤醒算法*/
+////        return new RandomRule();
+//        /**重试策略  -- 不生效
+//         * 先按照RoundRobinRule的策略获取服务，
+//         * 如果获取服务失败则在指定时间内会进行重试，获取可用的服务
+//         * 跳过出问题的服务,寻找存存活的服务
+//         * */
+//        return new RetryRule();
+//    }
 }
