@@ -22,7 +22,11 @@ spring:                                                    #对应Eureka的微�
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-
+info:
+  app.name: szs-microservicecloud
+  company.name: www.szs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
@@ -32,9 +36,4 @@ eureka:
     instance-id: microservicecloud-provider-dept-8001  # 主机映射名称修改(自定义服务名称信息)
     prefer-ip-address: true     #访问路径可以显示IP地址,可公共访问的IP地址
 
-info:
-  app.name: szs-microservicecloud
-  company.name: www.szs.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
 
