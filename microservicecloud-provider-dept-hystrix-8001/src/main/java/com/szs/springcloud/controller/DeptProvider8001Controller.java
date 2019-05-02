@@ -49,6 +49,7 @@ public class DeptProvider8001Controller {
 
         return dept;
     }
+    @HystrixCommand
     public Dept processHystrixGet(@PathVariable("id")Long id){
         return new Dept().setDbSource("不存在对应的数据库名字").setDeptNo(id).setDeptName("没有对应的DeptName");
     }

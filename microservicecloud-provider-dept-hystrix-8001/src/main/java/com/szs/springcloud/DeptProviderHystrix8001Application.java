@@ -12,12 +12,11 @@ import org.springframework.stereotype.Component;
  * Copyright (C), 2018-2019, ZhengZhouChuangZhi. Co., Ltd.
  * FileName: ${FILENAME}
  * 类的详细说明
- *
+ *@EnableCircuitBreaker   对hystrixR熔断机制的支持
  * @author 宋泽山
  * @version 1.0
  * @Date 2019/4/16 17:23
  */
-@Component
 @SpringBootApplication
 @MapperScan(value = "com.szs.springcloud.dao")
 @EnableEurekaClient
