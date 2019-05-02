@@ -16,8 +16,10 @@ import java.util.List;
  * @version 1.0
  * @Date 2019/5/1 17:31
  */
-@FeignClient(value = "MICROSERVICECLOUD-PROVIDER-DEPT/provider")
+//@FeignClient(value = "MICROSERVICECLOUD-PROVIDER-DEPT/provider")
+@FeignClient(value = "MICROSERVICECLOUD-PROVIDER-DEPT/provider",fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
+
     @RequestMapping(value = "/add/{deptName}")
     boolean add(@PathVariable(name = "deptName")String deptName);
 
