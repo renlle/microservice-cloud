@@ -18,7 +18,6 @@ import org.springframework.stereotype.Component;
  * @Date 2019/4/16 17:23
  */
 @SpringBootApplication
-@MapperScan(value = "com.szs.springcloud.dao")
 @EnableEurekaClient
 @EnableDiscoveryClient
 @EnableCircuitBreaker

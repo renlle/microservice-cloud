@@ -22,7 +22,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients(basePackages= {"com.szs.springcloud"})
-@ComponentScan("com.szs.springcloud")
 public class DeptConsumer80FeignApplication {
     public static void main(String[] args) {
         SpringApplication.run(DeptConsumer80FeignApplication.class, args);

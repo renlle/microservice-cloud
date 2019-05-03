@@ -1,6 +1,6 @@
 server:
   port: 80
-  context-path: /feign-consumer
+  context-path: /consumer
 # feign 负载均衡,开启熔断器配合
 feign:
   hystrix:
