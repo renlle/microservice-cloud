@@ -1,0 +1,3 @@
+spring:                                                    #对应Eureka的微服务名字
+   application:
+    name: microservicecloud-config-provider-dept-client-8001
