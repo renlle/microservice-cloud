@@ -1,14 +1,13 @@
 # SpringCloud微服务架构练习 
-###project  microservicecloud  created  by  szs 
----
+
 #### 介绍
 
 基于SpringCloud的微服务框架练习,技术栈包含: 
 
 1. Rest微服务构建案例工程模块
   1. 通用模块api
-  2. 服务提供者Provider
-  3. 服务消费者Consumer
+  2. 服务提供者Provider集群
+  3. 服务消费者Consumer集群
 2. Eureka服务注册与发现
    1. Eureka的基本架构
    2. Eureka服务注册中心
@@ -34,19 +33,26 @@
 
 #### 软件架构
 
-软件架构说明
+软件架构说明: 整体主要使用SpringMVC+SpringBoot/Spring+MyBatis+gitee+Vue组合进行开发; SpringCloud的技术参照上文的介绍.
 
 
 #### 安装教程
 
 1. 配置本机host文件
     *  127.0.0.1 eureka7001.com
-       127.0.0.1 eureka7002.com
-       127.0.0.1 eureka7003.com
-       127.0.0.1  myzuul.com
-       127.0.0.1  config-3344.com 
-2. xxxx
-3. xxxx
+    *  127.0.0.1 eureka7002.com
+    *  127.0.0.1 eureka7003.com
+    *  127.0.0.1  myzuul.com
+    *  127.0.0.1  config-3344.com 
+    *  127.0.0.1  client-config.com
+2. 克隆到本地即可
+   git clone https://gitee.com/renlle/microservicecloud_szs.git
+3. 处理maven工程
+   1. maven clean
+   2. maven compile
+   3. maven install
+4. 运行
+
 
 #### 使用说明
 
